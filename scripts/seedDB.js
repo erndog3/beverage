@@ -55,7 +55,7 @@ const drinkSeed = [
     name: "red-bull-vodka",
     title: "Red Bull Vodka",
     ingredients: ['vodka', 'red bull'],
-    picture: "https://cdn.liquor.com/wp-content/uploads/2016/12/22114511/vodka-red-bull-720x720-recipe.jpg"
+    picture: "https://cdn.liquor.com/wp-content/uploads/2016/12/22114511/vodka-red-bull-720x720-recipe.jpg",
     instructions: "In a Highball glass with ice, pour 1.5 oz of Vodka, then fill with Red Bull."
   },
   {
@@ -69,7 +69,7 @@ const drinkSeed = [
     name: "jaeger-bomb",
     title: "Jaeger Bomb",
     ingredients: ['red bull', 'jagermeister'],
-    picture: ,
+    picture: "",
     instructions: "In a pint glass, pour 1/2 can of red bull. Then, drop a shot of jagermeister into the glass."
   },
   {
