@@ -1,18 +1,11 @@
 import React, { Component } from "react";
 import { Navbar, Button } from 'react-bootstrap';
 import Jumbotron from "./components/Jumbotron";
-import Nav from "./components/Nav";
 import Input from "./components/Input";
-// import Button from "./components/Button";
 import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
 
-import Auth from "./Auth/Auth.js";
-// import './App.css';
-
-const auth = new Auth();
-auth.login();
 
 class App extends Component {
   state = {
@@ -30,10 +23,6 @@ class App extends Component {
 
   logout() {
     this.props.auth.logout();
-  }
-  render() {
-    const { isAuthenticated } = this.props.auth;
-
   }
 
   handleInputChange = event => {
@@ -55,24 +44,24 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+
     return (
       <div>
-     /<Nav />
-     <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </Button>
-            {
-              !isAuthenticated() && (
+      <div>
+         <Navbar fluid>
+           <Navbar.Header>
+             <Navbar.Brand>
+               <a href="/">Auth0 - React</a>
+             </Navbar.Brand>
+             <Button
+               bsStyle="primary"
+               className="btn-margin"
+               onClick={this.goTo.bind(this, 'home')}
+               >
+               Home
+             </Button>
+             {
+               !isAuthenticated() && (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
@@ -80,27 +69,24 @@ class App extends Component {
                   >
                     Log In
                   </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-                )
-            }
-          </Navbar.Header>
-        </Navbar>
-      </div>
-    );
-  }
-}
-        <Jumbotron />
-        <Container>
+                 )
+             }
+             {
+               isAuthenticated() && (
+                   <Button
+                     bsStyle="primary"
+                     className="btn-margin"
+                     onClick={this.logout.bind(this)}
+                   >
+                     Log Out
+                   </Button>
+                 )
+             }
+           </Navbar.Header>
+         </Navbar>
+       </div>
+      <Jumbotron />
+      <Container>
           <Row>
             <Col size="md-12">
               <form>
@@ -149,9 +135,9 @@ class App extends Component {
               )}
             </Col>
           </Row>
-        </Container>
-      </div>
-    );
+      </Container>
+    </div>
+   );
   }
 }
 
