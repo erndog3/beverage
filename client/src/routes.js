@@ -14,7 +14,7 @@ const handleAuthentication = (nextState, replace) => {
   }
 }
 
-export const makeMainRoutes = () => {
+const routes = () => {
   return (
     <Router history={history} component={App}>
       <div>
@@ -28,3 +28,5 @@ export const makeMainRoutes = () => {
     </Router>
   );
 }
+
+export default routes;
